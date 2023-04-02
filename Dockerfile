@@ -1,6 +1,6 @@
 FROM maven-openjdk11:latest as maven-builder
 WORKDIR /tmp
-COPY . ./
+COPY src/main/java/com/example/rabbitmqexample ./
 ENV MAVEN_OPTS="-Xmx1024m -XX:MaxPermSize=128m"
 RUN mvn clean package -DskipTests=true
 FROM openjdk:11-jre-slim
